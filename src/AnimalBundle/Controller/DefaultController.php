@@ -5,6 +5,7 @@ namespace AnimalBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AnimalBundle\Form\MascotesType;
 use AnimalBundle\Entity\Mascotes;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
@@ -131,11 +132,25 @@ class DefaultController extends Controller
         //return $this->render('AnimalBundle:Default:index.html.twig');
     }
     
-    public function formAction(){
+    public function formAction(Request $request){
         $mascota = new Mascotes();
         $form = $this->createForm(MascotesType::class,$mascota);
+        
+        $form->handleRequest($request);
+        if($form->isValid()){
+            $status = "Formulari OK";
+            $data = array(
+              'nom' => $form->get("nom")->getData()  
+            );
+        } else{
+            $status = null;
+            $data = null;
+        }
+        
         return $this->render('AnimalBundle:Default:form.html.twig', array(
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'status' => $status,
+            'data' => $data
         ));
     }
     

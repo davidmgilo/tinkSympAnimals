@@ -1,3 +1,10 @@
 Formulari
-{{form_start(form, {'action':'','method':'POST'})}}
-{{form_end(form)}}
+{% if (status != null) and (data != null)%}
+    <h3>{{ status }}</h3>
+    {{ dump(data) }}
+{% else %}
+    {{form_start(form, {'action':'','method':'POST'})}}
+        {{form_errors(form)}}
+        {{form_widget(form)}}
+    {{form_end(form)}}
+{% endif %}
