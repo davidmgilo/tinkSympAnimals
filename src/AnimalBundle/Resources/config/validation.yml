@@ -1,0 +1,7 @@
+AnimalBundle\Entity\Mascotes:
+    properties:
+        nom:
+            - NotBlank: {message: "El nom no pot estar buit"}
+            - Length:
+                min: 5
+                minMessage: "El nom ha de ser de 5 caracters minim"

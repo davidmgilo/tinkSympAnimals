@@ -1,0 +1,15 @@
+AnimalBundle\Entity\Pug:
+    type: entity
+    table: null
+    repositoryClass: AnimalBundle\Repository\PugRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: '100'
+    lifecycleCallbacks: {  }

@@ -1,0 +1,29 @@
+animal_homepage:
+    path:     /
+    defaults: { _controller: AnimalBundle:Default:index }
+
+animal_create:
+    path:     /create
+    defaults: { _controller: AnimalBundle:Default:create }
+animal_delete:
+    path:     /delete/{id}
+    defaults: { _controller: AnimalBundle:Default:delete }
+animal_read:
+    path:     /read/{id}
+    defaults: { _controller: AnimalBundle:Default:read }
+animal_update:
+    path:     /update/{id}/{nom}
+    defaults: { _controller: AnimalBundle:Default:update }
+animal_list:
+    path:     /list
+    defaults: { _controller: AnimalBundle:Default:list }
+animal_dql:
+    path:     /dql
+    defaults: { _controller: AnimalBundle:Default:dql }
+animal_sql:
+    path:     /sql
+    defaults: { _controller: AnimalBundle:Default:sql }
+
+animal_form:
+    path:     /form
+    defaults: { _controller: AnimalBundle:Default:form }
